@@ -10,6 +10,6 @@ import Foundation
 import CoreGraphics
 
 
-protocol Force {
+public protocol Force {
     func apply(nodes: [Node], edges: [Edge], bounds: CGRect)
 }

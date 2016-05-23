@@ -9,8 +9,8 @@
 import Foundation
 import CoreGraphics
 
-extension CGRect {
-    var midpoint: CGPoint {
+public extension CGRect {
+    public var midpoint: CGPoint {
         return CGPoint(x: midX, y: midY)
     }
     
@@ -46,7 +46,7 @@ extension CGRect {
             height: size.height/2)
     }
     
-    var subdivide: [CGRect] {
+    public var subdivide: [CGRect] {
         return [nw, ne, sw, se]
     }
 }

@@ -9,21 +9,23 @@
 import Foundation
 import CoreGraphics
 
-class Link: Force {
+public class Link: Force {
     
-    private(set) var springLength: CGFloat = 50
-    func springLength(value: CGFloat) -> Link {
+    private(set) public var springLength: CGFloat = 50
+    public func springLength(value: CGFloat) -> Link {
         springLength = value
         return self
     }
     
-    private(set) var springCoefficient: CGFloat = 0.0002
-    func springCoefficient(value: CGFloat) -> Link {
+    private(set) public var springCoefficient: CGFloat = 0.0002
+    public func springCoefficient(value: CGFloat) -> Link {
         springCoefficient = value
         return self
     }
     
-    func apply(nodes: [Node], edges: [Edge], bounds: CGRect) {
+    public init() { }
+    
+    public func apply(nodes: [Node], edges: [Edge], bounds: CGRect) {
         computeHookesLaw(edges)
     }
 }

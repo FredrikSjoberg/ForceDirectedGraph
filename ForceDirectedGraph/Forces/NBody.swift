@@ -9,23 +9,24 @@
 import Foundation
 import CoreGraphics
 
-class NBody: Force {
-    
-    private(set) var repulsion: CGFloat = -1.2
-    func repuslion(value: CGFloat) -> NBody {
+public class NBody: Force {
+    private(set) public var repulsion: CGFloat = -1.2
+    public func repuslion(value: CGFloat) -> NBody {
         repulsion = value
         return self
     }
     
     /// Range of [0,1]
-    private(set) var theta: CGFloat = 0.8
-    func theta(value: CGFloat) -> NBody {
+    private(set) public var theta: CGFloat = 0.8
+    public func theta(value: CGFloat) -> NBody {
         // TODO: Enforce range
         theta = value
         return self
     }
     
-    func apply(nodes: [Node], edges: [Edge], bounds: CGRect) {
+    public init() { }
+    
+    public func apply(nodes: [Node], edges: [Edge], bounds: CGRect) {
         computeBarnesHut(nodes, bounds: bounds)
     }
 }

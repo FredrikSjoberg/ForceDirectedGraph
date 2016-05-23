@@ -9,26 +9,26 @@
 import Foundation
 import CoreGraphics
 
-class Body<T> {
-    let position: CGPoint
-    let data: T
+public class Body<T> {
+    public let position: CGPoint
+    public let data: T
     
-    init(position: CGPoint, data: T) {
+    public init(position: CGPoint, data: T) {
         self.position = position
         self.data = data
     }
 }
 
-class Quad<T> {
-    let bounds: CGRect
-    let center: CGPoint
+public class Quad<T> {
+    public let bounds: CGRect
+    public let center: CGPoint
     
-    var body: Body<T>?
-    var children: [Quad<T>]?
+    public var body: Body<T>?
+    public var children: [Quad<T>]?
     
-    let count: Int
+    public let count: Int
     
-    init(bounds: CGRect, center: CGPoint, num: Int, body: Body<T>? = nil, children: [Quad<T>]? = nil) {
+    public init(bounds: CGRect, center: CGPoint, num: Int, body: Body<T>? = nil, children: [Quad<T>]? = nil) {
         self.bounds = bounds
         self.center = center
         self.body = body
@@ -37,10 +37,10 @@ class Quad<T> {
     }
 }
 
-class QuadTree<T> {
-    let root: Quad<T>
+public class QuadTree<T> {
+    public let root: Quad<T>
     
-    init(bounds: CGRect, bodies: [Body<T>]) {
+    public init(bounds: CGRect, bodies: [Body<T>]) {
         root = configure(bounds, bodies: bodies)
     }
 }

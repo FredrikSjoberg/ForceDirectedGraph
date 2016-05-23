@@ -9,12 +9,12 @@
 import Foundation
 import CoreGraphics
 
-class Edge {
-    let weight: CGFloat
-    unowned let to: Node
-    unowned let from: Node
+public class Edge {
+    public let weight: CGFloat
+    public unowned let to: Node
+    public unowned let from: Node
     
-    init(to: Node, from: Node, weight: CGFloat = 1) {
+    public init(to: Node, from: Node, weight: CGFloat = 1) {
         self.to = to
         self.from = from
         self.weight = weight

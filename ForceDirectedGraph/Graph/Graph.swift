@@ -9,41 +9,41 @@
 import Foundation
 import CoreGraphics
 
-class Graph {
+public class Graph {
     
-    private(set) var centerOfGravity: CGFloat = -1e-4
-    func centerOfGravity(value: CGFloat) -> Graph {
+    private(set) public var centerOfGravity: CGFloat = -1e-4
+    public func centerOfGravity(value: CGFloat) -> Graph {
         centerOfGravity = value
         return self
     }
     
-    private(set) var drag: CGFloat = -0.02
-    func drag(value: CGFloat) -> Graph {
+    private(set) public var drag: CGFloat = -0.02
+    public func drag(value: CGFloat) -> Graph {
         drag = value
         return self
     }
     
-    private(set) var timeStep: Int = 20
-    func timeStep(value: Int) -> Graph {
+    private(set) public var timeStep: Int = 20
+    public func timeStep(value: Int) -> Graph {
         timeStep = value
         return self
     }
     
-    private(set) var maxVelocity: CGFloat = 1
-    func maxVelocity(value: CGFloat) -> Graph {
+    private(set) public var maxVelocity: CGFloat = 1
+    public func maxVelocity(value: CGFloat) -> Graph {
         maxVelocity = value
         return self
     }
     
-    private(set) var centerOn: CGPoint = CGPointZero
-    func centerOn(value: CGPoint) -> Graph {
+    private(set) public var centerOn: CGPoint = CGPointZero
+    public func centerOn(value: CGPoint) -> Graph {
         centerOn = value
         return self
     }
     
     private var needsUpdate: Bool = false
     
-    var bounds: CGRect {
+    public var bounds: CGRect {
         guard self.nodes.count > 0 else { return CGRectZero }
         let xSort = self.nodes.sort{ $0.position.x < $1.position.x }
         let ySort = self.nodes.sort{ $0.position.y < $1.position.y }
@@ -54,21 +54,21 @@ class Graph {
         return CGRect(x: xMin, y: yMin, width: xMax-xMin, height: yMax-yMin)
     }
     
-    let nodes: [Node]
-    let edges: [Edge]
-    private(set) var forces: [String: Force] = [:]
-    init(nodes: [Node], edges: [Edge]) {
+    public let nodes: [Node]
+    public let edges: [Edge]
+    private(set) public var forces: [String: Force] = [:]
+    public init(nodes: [Node], edges: [Edge]) {
         self.nodes = nodes
         self.edges = edges
     }
     
     
-    func force(name: String, force: Force?) -> Graph {
+    public func force(name: String, force: Force?) -> Graph {
         forces[name] = force
         return self
     }
     
-    func force(name: String, closure: () -> (Force)) -> Graph {
+    public func force(name: String, closure: () -> (Force)) -> Graph {
         let force = closure()
         forces[name] = force
         return self
@@ -76,7 +76,7 @@ class Graph {
 }
 
 extension Graph {
-    func update(closure: ([Node] -> ())) {
+    public func update(closure: ([Node] -> ())) {
         if totalEnergy() > 0.001 {
             step()
             closure(nodes)
@@ -88,14 +88,14 @@ extension Graph {
         }
     }
     
-    func fix(node: Node, position: CGPoint) -> Graph {
+    public func fix(node: Node, position: CGPoint) -> Graph {
         // TODO: Check that 'nodes' contains 'node'
         node.fix(position)
         needsUpdate = true
         return self
     }
     
-    func unfix(node: Node) -> Graph {
+    public func unfix(node: Node) -> Graph {
         // TODO: Check that 'nodes' contains 'node'
         node.unfix()
         needsUpdate = true
@@ -111,7 +111,7 @@ extension Graph {
 }
 
 extension Graph {
-    func step() {
+    public func step() {
         forces.values.forEach{ $0.apply(nodes, edges: edges, bounds: bounds) }
         
         computeCenter(nodes)
