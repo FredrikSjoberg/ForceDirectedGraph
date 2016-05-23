@@ -10,6 +10,8 @@
 		7636126C1CF3892300133FF6 /* ForceDirectedGraph.h in Headers */ = {isa = PBXBuildFile; fileRef = 7636126B1CF3892300133FF6 /* ForceDirectedGraph.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		763612731CF3892300133FF6 /* ForceDirectedGraph.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 763612681CF3892300133FF6 /* ForceDirectedGraph.framework */; };
 		763612781CF3892300133FF6 /* ForceDirectedGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612771CF3892300133FF6 /* ForceDirectedGraphTests.swift */; };
+		763612841CF389CC00133FF6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 763612821CF389CC00133FF6 /* LICENSE */; };
+		763612851CF389CC00133FF6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 763612831CF389CC00133FF6 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		763612721CF3892300133FF6 /* ForceDirectedGraphTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForceDirectedGraphTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		763612771CF3892300133FF6 /* ForceDirectedGraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceDirectedGraphTests.swift; sourceTree = "<group>"; };
 		763612791CF3892300133FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		763612821CF389CC00133FF6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		763612831CF389CC00133FF6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				7636126B1CF3892300133FF6 /* ForceDirectedGraph.h */,
 				7636126D1CF3892300133FF6 /* Info.plist */,
+				763612821CF389CC00133FF6 /* LICENSE */,
+				763612831CF389CC00133FF6 /* README.md */,
 			);
 			path = ForceDirectedGraph;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763612841CF389CC00133FF6 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763612851CF389CC00133FF6 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
