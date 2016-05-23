@@ -12,6 +12,15 @@
 		763612781CF3892300133FF6 /* ForceDirectedGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612771CF3892300133FF6 /* ForceDirectedGraphTests.swift */; };
 		763612841CF389CC00133FF6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 763612821CF389CC00133FF6 /* LICENSE */; };
 		763612851CF389CC00133FF6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 763612831CF389CC00133FF6 /* README.md */; };
+		763612941CF38BA400133FF6 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612871CF38BA400133FF6 /* CGPoint+Extensions.swift */; };
+		763612951CF38BA400133FF6 /* CGRect+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612881CF38BA400133FF6 /* CGRect+Extensions.swift */; };
+		763612971CF38BA400133FF6 /* Force.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636128B1CF38BA400133FF6 /* Force.swift */; };
+		763612981CF38BA400133FF6 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636128C1CF38BA400133FF6 /* Link.swift */; };
+		763612991CF38BA400133FF6 /* NBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636128D1CF38BA400133FF6 /* NBody.swift */; };
+		7636129A1CF38BA400133FF6 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7636128F1CF38BA400133FF6 /* Edge.swift */; };
+		7636129B1CF38BA400133FF6 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612901CF38BA400133FF6 /* Graph.swift */; };
+		7636129C1CF38BA400133FF6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612911CF38BA400133FF6 /* Node.swift */; };
+		7636129D1CF38BA400133FF6 /* QuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612931CF38BA400133FF6 /* QuadTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +42,15 @@
 		763612791CF3892300133FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		763612821CF389CC00133FF6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		763612831CF389CC00133FF6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		763612871CF38BA400133FF6 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		763612881CF38BA400133FF6 /* CGRect+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extensions.swift"; sourceTree = "<group>"; };
+		7636128B1CF38BA400133FF6 /* Force.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Force.swift; sourceTree = "<group>"; };
+		7636128C1CF38BA400133FF6 /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		7636128D1CF38BA400133FF6 /* NBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBody.swift; sourceTree = "<group>"; };
+		7636128F1CF38BA400133FF6 /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
+		763612901CF38BA400133FF6 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		763612911CF38BA400133FF6 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		763612931CF38BA400133FF6 /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +95,10 @@
 			children = (
 				7636126B1CF3892300133FF6 /* ForceDirectedGraph.h */,
 				7636126D1CF3892300133FF6 /* Info.plist */,
+				763612861CF38BA400133FF6 /* Extensions */,
+				763612891CF38BA400133FF6 /* Forces */,
+				7636128E1CF38BA400133FF6 /* Graph */,
+				763612921CF38BA400133FF6 /* QuadTree */,
 				763612821CF389CC00133FF6 /* LICENSE */,
 				763612831CF389CC00133FF6 /* README.md */,
 			);
@@ -90,6 +112,43 @@
 				763612791CF3892300133FF6 /* Info.plist */,
 			);
 			path = ForceDirectedGraphTests;
+			sourceTree = "<group>";
+		};
+		763612861CF38BA400133FF6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				763612871CF38BA400133FF6 /* CGPoint+Extensions.swift */,
+				763612881CF38BA400133FF6 /* CGRect+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		763612891CF38BA400133FF6 /* Forces */ = {
+			isa = PBXGroup;
+			children = (
+				7636128B1CF38BA400133FF6 /* Force.swift */,
+				7636128C1CF38BA400133FF6 /* Link.swift */,
+				7636128D1CF38BA400133FF6 /* NBody.swift */,
+			);
+			path = Forces;
+			sourceTree = "<group>";
+		};
+		7636128E1CF38BA400133FF6 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				7636128F1CF38BA400133FF6 /* Edge.swift */,
+				763612901CF38BA400133FF6 /* Graph.swift */,
+				763612911CF38BA400133FF6 /* Node.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		763612921CF38BA400133FF6 /* QuadTree */ = {
+			isa = PBXGroup;
+			children = (
+				763612931CF38BA400133FF6 /* QuadTree.swift */,
+			);
+			path = QuadTree;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,7 +260,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7636129C1CF38BA400133FF6 /* Node.swift in Sources */,
+				763612941CF38BA400133FF6 /* CGPoint+Extensions.swift in Sources */,
+				7636129A1CF38BA400133FF6 /* Edge.swift in Sources */,
+				7636129D1CF38BA400133FF6 /* QuadTree.swift in Sources */,
+				763612951CF38BA400133FF6 /* CGRect+Extensions.swift in Sources */,
+				763612981CF38BA400133FF6 /* Link.swift in Sources */,
+				763612991CF38BA400133FF6 /* NBody.swift in Sources */,
+				7636129B1CF38BA400133FF6 /* Graph.swift in Sources */,
 				763612851CF389CC00133FF6 /* README.md in Sources */,
+				763612971CF38BA400133FF6 /* Force.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
