@@ -62,6 +62,11 @@ public class Graph {
         self.edges = edges
     }
     
+    public init(nodes: Int, edges: [Int: Int]) {
+        let vertices = (0..<nodes).map{ Node(index: $0) }
+        self.nodes = vertices
+        self.edges = edges.map{ Edge(to: vertices[$0.0], from: vertices[$0.1]) }
+    }
     
     public func force(name: String, force: Force?) -> Graph {
         forces[name] = force
