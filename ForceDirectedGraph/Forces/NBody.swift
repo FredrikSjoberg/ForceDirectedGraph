@@ -16,6 +16,29 @@ public class NBody: Force {
         return self
     }
     
+    private(set) public var minDistance: (Node) -> CGFloat = { _ in 1 }
+    public func minDistance(value: CGFloat) -> NBody {
+        // TODO: enforce no negative values
+        minDistance = { _ in value }
+        return self
+    }
+    public func minDistance(closure: (Node) -> CGFloat) -> NBody {
+        minDistance = closure
+        return self
+    }
+    
+    private(set) public var maxDistance: ((Node) -> CGFloat)? = nil
+    public func maxDistance(value: CGFloat) -> NBody {
+        // TODO: enforce no negative values
+        maxDistance = { _ in value }
+        return self
+    }
+    public func maxDistance(closure: ((Node) -> CGFloat)?) -> NBody {
+        maxDistance = closure
+        return self
+    }
+    
+    
     /// Range of [0,1]
     private(set) public var theta: CGFloat = 0.8
     public func theta(value: CGFloat) -> NBody {
@@ -40,6 +63,8 @@ extension NBody {
     }
     
     private func applyBarnesHut(node: Node, quad: Quad<Node>) {
+//        func updateForce(node: Node, direction)
+        
         let s = (quad.bounds.width + quad.bounds.height)/2
         let d = (quad.center - node.position).magnitude
         
@@ -54,7 +79,16 @@ extension NBody {
                     let distance = db.magnitude
                     let direction = db.normalized
                     
-                    node.force = node.force + direction * repulsion / (distance * distance * 0.5)
+                    if distance > minDistance(node) {
+                        if let max = maxDistance {
+                            if distance < max(node) {
+                                node.force = node.force + direction * repulsion / (distance * distance * 0.5)
+                            }
+                        }
+                        else {
+                            node.force = node.force + direction * repulsion / (distance * distance * 0.5)
+                        }
+                    }
                 }
             }
         }
@@ -63,7 +97,14 @@ extension NBody {
             let dq = quad.center - node.position
             let distance = dq.magnitude
             let direction = dq.normalized
-            node.force = node.force + direction * repulsion * CGFloat(quad.count) / (distance * distance * 0.5)
+            if let max = maxDistance {
+                if distance < max(node) {
+                    node.force = node.force + direction * repulsion * CGFloat(quad.count) / (distance * distance * 0.5)
+                }
+            }
+            else {
+                node.force = node.force + direction * repulsion * CGFloat(quad.count) / (distance * distance * 0.5)
+            }
         }
     }
 }
