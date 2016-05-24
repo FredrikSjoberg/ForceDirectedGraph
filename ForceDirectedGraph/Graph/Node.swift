@@ -10,7 +10,6 @@ import Foundation
 import CoreGraphics
 
 public class Node: Equatable {
-    public let index: Int
     public var mass: CGFloat
     private var fixedPoint: CGPoint?
     public var fixed: Bool {
@@ -23,8 +22,7 @@ public class Node: Equatable {
         }
     }
     
-    public init(index: Int, mass: CGFloat = 1) {
-        self.index = index
+    public init(mass: CGFloat = 1) {
         self.mass = mass
     }
     

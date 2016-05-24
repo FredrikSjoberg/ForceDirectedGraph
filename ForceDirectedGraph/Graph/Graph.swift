@@ -63,7 +63,7 @@ public class Graph {
     }
     
     public init(nodes: Int, edges: [Int: Int]) {
-        let vertices = (0..<nodes).map{ Node(index: $0) }
+        let vertices = (0..<nodes).map{ _ in Node() }
         self.nodes = vertices
         self.edges = edges.map{ Edge(to: vertices[$0.0], from: vertices[$0.1]) }
     }
