@@ -17,7 +17,7 @@ public class Graph {
         return self
     }
     
-    private(set) public var drag: CGFloat = -0.02
+    private(set) public var drag: CGFloat = -0.04
     public func drag(value: CGFloat) -> Graph {
         drag = value
         return self

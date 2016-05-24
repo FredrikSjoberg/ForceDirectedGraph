@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 
 public class NBody: Force {
-    private(set) public var repulsion: CGFloat = -1.2
+    private(set) public var repulsion: CGFloat = -30
     public func repuslion(value: CGFloat) -> NBody {
         repulsion = value
         return self
