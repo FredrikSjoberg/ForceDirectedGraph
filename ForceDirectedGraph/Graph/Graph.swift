@@ -29,6 +29,12 @@ public class Graph {
         return self
     }
     
+    private(set) public var energyThreshold: CGFloat = 0.01
+    public func energyThreshold(value: CGFloat) -> Graph {
+        energyThreshold = value
+        return self
+    }
+    
     private(set) public var maxVelocity: CGFloat = 1
     public func maxVelocity(value: CGFloat) -> Graph {
         maxVelocity = value
@@ -40,8 +46,6 @@ public class Graph {
         centerOn = value
         return self
     }
-    
-    private var needsUpdate: Bool = false
     
     public var bounds: CGRect {
         guard self.nodes.count > 0 else { return CGRectZero }
@@ -78,11 +82,13 @@ public class Graph {
         forces[name] = force
         return self
     }
+    
+    private var needsUpdate: Bool = false
 }
 
 extension Graph {
     public func update(closure: ([Node] -> ())) {
-        if totalEnergy() > 0.001 {
+        if totalEnergy() > energyThreshold {
             step()
             closure(nodes)
         }
@@ -90,6 +96,13 @@ extension Graph {
             step()
             closure(nodes)
             needsUpdate = false
+        }
+    }
+    
+    private func totalEnergy() -> CGFloat {
+        return nodes.reduce(0) { (sum, node) -> CGFloat in
+            let v = node.velocity.magnitude
+            return sum + 0.5 * node.mass * v * v
         }
     }
     
@@ -103,16 +116,9 @@ extension Graph {
     public func unfix(node: Node) -> Graph {
         // TODO: Check that 'nodes' contains 'node'
         node.unfix()
-        needsUpdate = true
         return self
     }
     
-    private func totalEnergy() -> CGFloat {
-        return nodes.reduce(0) { (sum, node) -> CGFloat in
-            let v = node.velocity.magnitude
-            return sum + 0.5 * node.mass * v * v
-        }
-    }
 }
 
 extension Graph {
@@ -124,14 +130,16 @@ extension Graph {
         computeGravity(nodes)
         
         nodes.forEach{
-            let acceleration = $0.force / $0.mass
-            $0.force = CGPointZero
-            $0.velocity = $0.velocity + acceleration * CGFloat(timeStep)
-            if $0.velocity.magnitude > maxVelocity {
-                $0.velocity = $0.velocity.normalized * maxVelocity
+            if !$0.fixed {
+                let acceleration = $0.force / $0.mass
+                $0.force = CGPointZero
+                $0.velocity = $0.velocity + acceleration * CGFloat(timeStep)
+                if $0.velocity.magnitude > maxVelocity {
+                    $0.velocity = $0.velocity.normalized * maxVelocity
+                }
+                
+                $0.position = $0.position + $0.velocity * CGFloat(timeStep)
             }
-            
-            $0.position = $0.position + $0.velocity * CGFloat(timeStep)
         }
     }
     
