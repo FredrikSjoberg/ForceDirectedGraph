@@ -153,6 +153,8 @@ extension Graph {
     
     private func computeCenter(nodes: [Node]) {
         let center = nodes.reduce(CGPointZero){ $0 + $1.position } / CGFloat(nodes.count) - centerOn
-        nodes.forEach{ $0.position = $0.position - center }
+        nodes.forEach{
+            if !$0.fixed { $0.position = $0.position - center }
+        }
     }
 }
