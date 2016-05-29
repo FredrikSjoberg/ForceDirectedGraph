@@ -21,6 +21,8 @@
 		7636129B1CF38BA400133FF6 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612901CF38BA400133FF6 /* Graph.swift */; };
 		7636129C1CF38BA400133FF6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612911CF38BA400133FF6 /* Node.swift */; };
 		7636129D1CF38BA400133FF6 /* QuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612931CF38BA400133FF6 /* QuadTree.swift */; };
+		7659D98E1CFAEC7200124ACF /* Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7659D98D1CFAEC7200124ACF /* Collision.swift */; };
+		7659D9921CFB648000124ACF /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7659D9911CFB648000124ACF /* Position.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		763612901CF38BA400133FF6 /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		763612911CF38BA400133FF6 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		763612931CF38BA400133FF6 /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
+		7659D98D1CFAEC7200124ACF /* Collision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collision.swift; sourceTree = "<group>"; };
+		7659D9911CFB648000124ACF /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 				7636128B1CF38BA400133FF6 /* Force.swift */,
 				7636128C1CF38BA400133FF6 /* Link.swift */,
 				7636128D1CF38BA400133FF6 /* NBody.swift */,
+				7659D98D1CFAEC7200124ACF /* Collision.swift */,
+				7659D9911CFB648000124ACF /* Position.swift */,
 			);
 			path = Forces;
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 			files = (
 				7636129C1CF38BA400133FF6 /* Node.swift in Sources */,
 				763612941CF38BA400133FF6 /* CGPoint+Extensions.swift in Sources */,
+				7659D9921CFB648000124ACF /* Position.swift in Sources */,
 				7636129A1CF38BA400133FF6 /* Edge.swift in Sources */,
 				7636129D1CF38BA400133FF6 /* QuadTree.swift in Sources */,
 				763612951CF38BA400133FF6 /* CGRect+Extensions.swift in Sources */,
@@ -270,6 +277,7 @@
 				763612991CF38BA400133FF6 /* NBody.swift in Sources */,
 				7636129B1CF38BA400133FF6 /* Graph.swift in Sources */,
 				763612851CF389CC00133FF6 /* README.md in Sources */,
+				7659D98E1CFAEC7200124ACF /* Collision.swift in Sources */,
 				763612971CF38BA400133FF6 /* Force.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +465,7 @@
 				7636127E1CF3892300133FF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7636127F1CF3892300133FF6 /* Build configuration list for PBXNativeTarget "ForceDirectedGraphTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +474,7 @@
 				763612811CF3892300133FF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

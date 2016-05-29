@@ -10,9 +10,10 @@ import Foundation
 import CoreGraphics
 
 public class NBody: Force {
-    private(set) public var repulsion: CGFloat = -30
-    public func repuslion(value: CGFloat) -> NBody {
-        repulsion = value
+    /// Negative values gives repulsion, positive values attraction
+    private(set) public var strength: CGFloat = -30
+    public func strength(value: CGFloat) -> NBody {
+        strength = value
         return self
     }
     
@@ -80,11 +81,11 @@ extension NBody {
                     if distance > minDistance(node) {
                         if let max = maxDistance {
                             if distance < max(node) {
-                                node.force = node.force + direction * repulsion / (distance * distance * 0.5)
+                                node.force = node.force + direction * strength / (distance * distance * 0.5)
                             }
                         }
                         else {
-                            node.force = node.force + direction * repulsion / (distance * distance * 0.5)
+                            node.force = node.force + direction * strength / (distance * distance * 0.5)
                         }
                     }
                 }
@@ -97,11 +98,11 @@ extension NBody {
             let direction = dq.normalized
             if let max = maxDistance {
                 if distance < max(node) {
-                    node.force = node.force + direction * repulsion * CGFloat(quad.count) / (distance * distance * 0.5)
+                    node.force = node.force + direction * strength * CGFloat(quad.count) / (distance * distance * 0.5)
                 }
             }
             else {
-                node.force = node.force + direction * repulsion * CGFloat(quad.count) / (distance * distance * 0.5)
+                node.force = node.force + direction * strength * CGFloat(quad.count) / (distance * distance * 0.5)
             }
         }
     }

@@ -11,6 +11,7 @@ import CoreGraphics
 
 public class Node: Equatable {
     public var mass: CGFloat
+    public var radius: CGFloat
     private var fixedPoint: CGPoint?
     public var fixed: Bool {
         return fixedPoint != nil
@@ -22,8 +23,9 @@ public class Node: Equatable {
         }
     }
     
-    public init(mass: CGFloat = 1) {
+    public init(mass: CGFloat = 1, radius: CGFloat = 1) {
         self.mass = mass
+        self.radius = radius
     }
     
     public var position: CGPoint = CGPoint(x: CGFloat(drand48()), y: CGFloat(drand48()))
