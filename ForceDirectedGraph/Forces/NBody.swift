@@ -63,8 +63,6 @@ extension NBody {
     }
     
     private func applyBarnesHut(node: Node, quad: Quad<Node>) {
-//        func updateForce(node: Node, direction)
-        
         let s = (quad.bounds.width + quad.bounds.height)/2
         let d = (quad.center - node.position).magnitude
         
