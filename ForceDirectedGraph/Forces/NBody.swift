@@ -43,8 +43,7 @@ public class NBody: Force {
     /// Range of [0,1]
     private(set) public var theta: CGFloat = 0.8
     public func theta(value: CGFloat) -> NBody {
-        // TODO: Enforce range
-        theta = value
+        theta = value.clamp(0, 1)
         return self
     }
     

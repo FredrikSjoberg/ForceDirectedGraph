@@ -23,6 +23,7 @@
 		7636129D1CF38BA400133FF6 /* QuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763612931CF38BA400133FF6 /* QuadTree.swift */; };
 		7659D98E1CFAEC7200124ACF /* Collision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7659D98D1CFAEC7200124ACF /* Collision.swift */; };
 		7659D9921CFB648000124ACF /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7659D9911CFB648000124ACF /* Position.swift */; };
+		7659D9A31CFCEB8700124ACF /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7659D9A21CFCEB8700124ACF /* CGFloat+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		763612931CF38BA400133FF6 /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
 		7659D98D1CFAEC7200124ACF /* Collision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collision.swift; sourceTree = "<group>"; };
 		7659D9911CFB648000124ACF /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		7659D9A21CFCEB8700124ACF /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			children = (
 				763612871CF38BA400133FF6 /* CGPoint+Extensions.swift */,
 				763612881CF38BA400133FF6 /* CGRect+Extensions.swift */,
+				7659D9A21CFCEB8700124ACF /* CGFloat+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7636129C1CF38BA400133FF6 /* Node.swift in Sources */,
+				7659D9A31CFCEB8700124ACF /* CGFloat+Extensions.swift in Sources */,
 				763612941CF38BA400133FF6 /* CGPoint+Extensions.swift in Sources */,
 				7659D9921CFB648000124ACF /* Position.swift in Sources */,
 				7636129A1CF38BA400133FF6 /* Edge.swift in Sources */,
