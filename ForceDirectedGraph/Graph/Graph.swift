@@ -58,20 +58,28 @@ public class Graph {
         return CGRect(x: xMin, y: yMin, width: xMax-xMin, height: yMax-yMin)
     }
     
-    public let nodes: [Node]
+    // MARK: Nodes
+    private(set) public var nodes: [Node]
+    public func add(node: Node) {
+        nodes.append(node)
+    }
+    public func add(nodes: [Node]) {
+        self.nodes.appendContentsOf(nodes)
+    }
+    public func remove(node: Node) {
+        guard let index = nodes.indexOf(node) else { return }
+        nodes.removeAtIndex(index)
+    }
+    public func remove(nodes: [Node]) {
+        // TODO: Better to do this in one swoop (set.subtract?)
+        nodes.forEach{ remove($0) }
+    }
+    
+    // MARK: Edges
     public let edges: [Edge]
+    
+    // MARK: Forces
     private(set) public var forces: [String: Force] = [:]
-    public init(nodes: [Node], edges: [Edge]) {
-        self.nodes = nodes
-        self.edges = edges
-    }
-    
-    public init(nodes: Int, edges: [Int: Int]) {
-        let vertices = (0..<nodes).map{ _ in Node() }
-        self.nodes = vertices
-        self.edges = edges.map{ Edge(to: vertices[$0.0], from: vertices[$0.1]) }
-    }
-    
     public func force(name: String, force: Force?) -> Graph {
         forces[name] = force
         return self
@@ -83,7 +91,22 @@ public class Graph {
         return self
     }
     
+    public init(nodes: [Node], edges: [Edge]) {
+        self.nodes = nodes
+        self.edges = edges
+    }
+    
+    public init(nodes: Int, edges: [Int: Int]) {
+        let vertices = (0..<nodes).map{ _ in Node() }
+        self.nodes = vertices
+        self.edges = edges.map{ Edge(to: vertices[$0.0], from: vertices[$0.1]) }
+    }
+    
+    
     private var needsUpdate: Bool = false
+}
+
+extension Graph {
 }
 
 extension Graph {
