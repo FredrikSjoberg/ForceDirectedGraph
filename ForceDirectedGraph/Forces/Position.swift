@@ -23,19 +23,10 @@ public class Position: Force {
         return self
     }
     
-    private(set) public var alpha: CGFloat = 1
-    public func alpha(value: CGFloat) -> Position {
-        alpha = value
-        return self
-    }
-    
     public func apply(nodes: [Node], edges: [Edge], bounds: CGRect) {
-        if alpha > 0.001 {
-            nodes.forEach{
-                let v = location($0) - $0.position
-                $0.velocity = $0.velocity + v * strength($0) * alpha
-            }
-            alpha += (0 - alpha) * (1 - pow(0.001, 1/300))
+        nodes.forEach{
+            let v = location($0) - $0.position
+            $0.force = $0.force + v * strength($0) * pow(v.magnitude,-1)
         }
     }
 }

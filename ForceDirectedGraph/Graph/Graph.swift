@@ -62,13 +62,16 @@ public class Graph {
     private(set) public var nodes: [Node]
     public func add(node: Node) {
         nodes.append(node)
+        needsUpdate = true
     }
     public func add(nodes: [Node]) {
         self.nodes.appendContentsOf(nodes)
+        needsUpdate = true
     }
     public func remove(node: Node) {
         guard let index = nodes.indexOf(node) else { return }
         nodes.removeAtIndex(index)
+        needsUpdate = true
     }
     public func remove(nodes: [Node]) {
         // TODO: Better to do this in one swoop (set.subtract?)
